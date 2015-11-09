@@ -1,0 +1,70 @@
+---
+title: "分类模型评价指标"
+author: "赵奇"
+date: "2015年11月9日"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+---
+
+## performance measure
+
+Here is the list of available performance measures. Let $Y$ and $\widehat Y$ be random variables representing the class and the prediction for a randomly drawn sample, respectively. Further, we use the following abbreviations for empirical quantities: P (positive samples), N (negative samples), TP (true positives), TN (true negatives), FP (false positives), FN (false negatives).
+
+### acc
+
+Accuracy. $P\left( {\widehat Y{\rm{ = }}Y} \right)$ . Estimated as:  $\frac{{TP + TN}}{{P + N}}$  
+
+### err
+
+Error rate. $P\left( {\widehat Y \ne Y} \right)$ Estimated as: $\frac{{FP + FN}}{{P + N}}$
+
+### fpr
+
+False positive rate.$P\left( {\widehat Y =  + |Y =  - } \right)$.Estimated as: $\frac{{FP}}{N}$
+
+### tpr
+
+True positive rate. $P\left( {\widehat Y =  + |Y =  - } \right)$. Estimated as:$\frac{{TP}}{P}$
+
+### rec
+
+Recall. Same as tpr.
+
+### prec
+
+Positive predictive value.$P\left( {Y =  + |\widehat Y =  + } \right)$ . Estimated as: $\frac{{TP}}{{TP + FP}}$
+
+### rpp
+
+Rate of positive predictions. $P\left( {\widehat Y =  + } \right)$ . Estimated as:$\frac{{TP + FP}}{{TP + FP + TN + FN}}$.
+
+### rnp
+
+Rate of negative predictions. $P\left( {\widehat Y =  - } \right)$. Estimated as: $\frac{{TN + FN}}{{TP + FP + TN + FN}}$
+.
+
+### lift
+
+Lift value. $\frac{{p\left( {\widehat Y =  + |Y =  + } \right)}}{{p\left( {\widehat Y =  + } \right)}}$.
+
+### Precision/recall curves
+
+x.measure=rec($\frac{{TP}}{{TP + FN}}$), measure=prec($\frac{{TP}}{{TP + FP}}$).  
+
+### ROC curves
+
+x.measure=fpr($\frac{{FP}}{N}$), y.measure=tpr($\frac{{TP}}{{TP + FN}}$).  
+
+### Cumulative recall curves
+
+x.measure=rpp($\frac{{TP + FP}}{{TP + FP + TN + FN}}$), y.measure=tpr($\frac{{TP}}{{TP + FN}}$)  
+
+### Lift charts
+
+x.measure=rpp($\frac{{TP + FP}}{{TP + FP + TN + FN}}$), y.measure=lift($\frac{{TP/P}}{{\left( {TP + FP} \right)/\left( {TP + FP + TN + FN} \right)}}$).  
+
+
+
